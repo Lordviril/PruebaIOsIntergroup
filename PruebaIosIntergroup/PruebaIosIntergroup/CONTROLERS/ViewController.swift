@@ -61,6 +61,9 @@ class ViewController: UIViewController, TextFieldDelegate {
         
         if GetDataToken() != ""
         {
+            let User = ResponseUserObject(dic: ["":""])
+            User.authToken = GetDataToken()
+            USER = User
             self.avPlayerController.player?.pause()
             self.performSegue(withIdentifier: "preTableView", sender: self)
         }

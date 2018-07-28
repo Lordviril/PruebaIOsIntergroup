@@ -30,6 +30,7 @@
 		95AEED8B210C4F1200199C72 /* ProspectosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AEED8A210C4F1200199C72 /* ProspectosController.swift */; };
 		95AEED8D210C529700199C72 /* ResponseProspectoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AEED8C210C529700199C72 /* ResponseProspectoObject.swift */; };
 		95AEED8F210C55CF00199C72 /* ProspectosRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AEED8E210C55CF00199C72 /* ProspectosRest.swift */; };
+		95AEED91210C74D300199C72 /* EditingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AEED90210C74D300199C72 /* EditingController.swift */; };
 		ACBA22842F64BEFC0BDC830A /* Pods_PruebaIosIntergroupTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC896F046862ED31E3050428 /* Pods_PruebaIosIntergroupTests.framework */; };
 		B1209D77AE47FA380BA2CD70 /* Pods_PruebaIosIntergroup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E803F987843B815C8663E405 /* Pods_PruebaIosIntergroup.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,7 @@
 		95AEED8A210C4F1200199C72 /* ProspectosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectosController.swift; sourceTree = "<group>"; };
 		95AEED8C210C529700199C72 /* ResponseProspectoObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseProspectoObject.swift; sourceTree = "<group>"; };
 		95AEED8E210C55CF00199C72 /* ProspectosRest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectosRest.swift; sourceTree = "<group>"; };
+		95AEED90210C74D300199C72 /* EditingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingController.swift; sourceTree = "<group>"; };
 		A3D76F4AC78BEB799449E021 /* Pods-PruebaIosIntergroupUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PruebaIosIntergroupUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PruebaIosIntergroupUITests/Pods-PruebaIosIntergroupUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D3536B86D73A78D92A3739A5 /* Pods-PruebaIosIntergroup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PruebaIosIntergroup.release.xcconfig"; path = "Pods/Target Support Files/Pods-PruebaIosIntergroup/Pods-PruebaIosIntergroup.release.xcconfig"; sourceTree = "<group>"; };
 		DCC0E69EA000B3A3C30DFDC1 /* Pods-PruebaIosIntergroupTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PruebaIosIntergroupTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PruebaIosIntergroupTests/Pods-PruebaIosIntergroupTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			children = (
 				95AEED3B210BE12E00199C72 /* ViewController.swift */,
 				95AEED8A210C4F1200199C72 /* ProspectosController.swift */,
+				95AEED90210C74D300199C72 /* EditingController.swift */,
 			);
 			path = CONTROLERS;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95AEED80210C07AD00199C72 /* UserRest.swift in Sources */,
+				95AEED91210C74D300199C72 /* EditingController.swift in Sources */,
 				95AEED8B210C4F1200199C72 /* ProspectosController.swift in Sources */,
 				95AEED7C210C049E00199C72 /* ResponseUserObject.swift in Sources */,
 				95AEED7E210C055F00199C72 /* ControlObject.swift in Sources */,

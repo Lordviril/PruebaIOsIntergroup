@@ -13,7 +13,7 @@ import SwiftSpinner
 func GetLogIn(control:UIViewController, email:String, pass:String, Ok:@escaping ((ResponseUserObject) -> Void))
 {
     let url = KUrlLogIn + "?email=\(email)&password=\(pass)"
-    SwiftSpinner.show("Connecting to satellite...")
+    SwiftSpinner.show("Cargando...")
     getDictionary(url: url, Ok: {res in
         
         let user = ResponseUserObject (dic: res)

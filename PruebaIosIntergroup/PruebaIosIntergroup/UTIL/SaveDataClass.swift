@@ -34,6 +34,13 @@ func SetData(Token: String)//, product:String)
     
 }
 
+func SetData(Object: [NSDictionary])//, product:String)
+{
+    let Id = "KIdDataProspecto"
+    
+    UserDefaults.standard.set(Object, forKey: Id)
+    
+}
 func GetDataUser() -> String
 {
     
@@ -75,6 +82,22 @@ func GetDataToken() -> String
     if let program = UserDefaults.standard.object(forKey: Id)
     {
         Program = program as! String
+    }
+    
+    
+    
+    return Program
+}
+
+func GetDataObject() -> [NSDictionary]
+{
+    
+    let Id = "KIdDataProspecto"
+    
+    var Program = [NSDictionary]();
+    if let program = UserDefaults.standard.object(forKey: Id)
+    {
+        Program = program as! [NSDictionary]
     }
     
     

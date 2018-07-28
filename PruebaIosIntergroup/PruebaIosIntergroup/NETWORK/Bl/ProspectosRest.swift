@@ -10,35 +10,49 @@ import Foundation
 import UIKit
 import SwiftSpinner
 
-func GetLogIn(control:UIViewController, token:String, Ok:@escaping (([ResponseProspectoObject]) -> Void))
+func getProspectos(control:UIViewController, token:String, Ok:@escaping (([ResponseProspectoObject]) -> Void))
 {
 
-    SwiftSpinner.show("Connecting to satellite...")
+    SwiftSpinner.show("Cargando...")
+    let Data = GetDataObject()
+    if Data.count <= 0
+    {
     
-    getArrayWhitToken(url: KUrlProspectos, token: token, Ok: {res in
-        var prospectosObjexts = [ResponseProspectoObject]()
-        
-        if res.count >= 1
-        {
-            for dic in res
+        getArrayWhitToken(url: KUrlProspectos, token: token, Ok: {res in
+            var prospectosObjexts = [ResponseProspectoObject]()
+            
+            if res.count >= 1
             {
-                prospectosObjexts.append(ResponseProspectoObject(dic: dic as! NSDictionary))
+                for dic in res
+                {
+                    prospectosObjexts.append(ResponseProspectoObject(dic: dic as! NSDictionary))
+                }
+                SetData(Object: res as! [NSDictionary])
+                Ok(prospectosObjexts)
+            }
+            else
+            {
+                showAlertError(View: control, Men: ErrorProspectos0)
             }
             
-            Ok(prospectosObjexts)
-        }
-        else
+            
+            SwiftSpinner.hide()
+            
+        }, Error: {res in
+            SwiftSpinner.hide()
+            showAlertError(View: control, Men: res)
+            
+        })
+    }
+    else
+    {
+        var prospectosObjexts = [ResponseProspectoObject]()
+        for dic in Data
         {
-            showAlertError(View: control, Men: ErrorProspectos0)
+            prospectosObjexts.append(ResponseProspectoObject(dic: dic as! NSDictionary))
         }
-        
-
+        Ok(prospectosObjexts)
         SwiftSpinner.hide()
-        
-    }, Error: {res in
-        SwiftSpinner.hide()
-        showAlertError(View: control, Men: res)
-        
-    })
+    }
 
 }

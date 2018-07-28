@@ -37,6 +37,13 @@ class ResponseProspectoObject: NSObject
         self.init(dic: dic as NSDictionary)
     }
     
+    func getDic() -> NSDictionary
+    {
+        let dic = ["name":name, "surname":surname, "id":id, "telephone":telephone, "statusCd":statusCd] as [String : Any]
+        
+        return dic as NSDictionary
+    }
+    
     func encode(with aCoder: NSCoder) {
         
         aCoder.encode(name, forKey: "name")

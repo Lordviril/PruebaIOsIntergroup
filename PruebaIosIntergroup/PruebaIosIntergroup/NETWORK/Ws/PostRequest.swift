@@ -76,11 +76,13 @@ func getDictionary(url:String, Ok:@escaping ((NSDictionary) -> Void), Error:@esc
 func getArrayWhitToken(url:String, token:String, Ok:@escaping ((NSArray) -> Void), Error:@escaping ((String!) -> Void))
 {
     let headers: HTTPHeaders = [
-        "Authorization": token
+        "Authorization": "Basic \(token)",
+        "Content-Type": "application/json"
     ]
     
     print("Url: \(url)")
-    request(url, method: .get, encoding: URLEncoding.default, headers: headers)
+    request("https://geotopo-c60e2.firebaseio.com/Dispositivos.json", method: .get, encoding: URLEncoding.default, headers: headers)
+
         .responseData {response in
             if let err = response.result.error {
                 print("error code: \(err.localizedDescription)")
@@ -88,7 +90,7 @@ func getArrayWhitToken(url:String, token:String, Ok:@escaping ((NSArray) -> Void
                 Error( "En el momento la aplicación no está disponible intente más tarde")
             }
                 
-            else if (response.response?.statusCode == 200 || response.response?.statusCode == 422 || response.response?.statusCode == 422)
+            else if (response.response?.statusCode == 200)
             {
                 
                 if let data = response.data{
